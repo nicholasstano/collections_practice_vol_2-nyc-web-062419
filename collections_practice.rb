@@ -37,8 +37,8 @@ def remove_non_strings(array)
 end
 
 def count_elements(array)
-	array.group_by(&:itself).map do |k, v|
-	k.merge!({:count => v.length})
+	array.group_by(&:itself).map do |key, count|
+	key.merge!({:count => count.length})
 	end
 end
 
