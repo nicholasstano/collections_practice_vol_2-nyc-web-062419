@@ -2,15 +2,7 @@ require 'pry'
 require 'byebug'
 
 def begins_with_r(array)
-	testing_t_or_f = nil 
-	array.each do |x|
-		if x.start_with?("r")
-			testing_t_or_f = true
-		else
-			testing_t_or_f = false
-		end
-	end
-	return testing_t_or_f
+	array.all? {|element| element.start_with?("r")}
 end
 
 def contain_a(array)
@@ -37,8 +29,8 @@ def remove_non_strings(array)
 end
 
 def count_elements(array)
-	array.group_by(&:itself).map do |key, count|
-	key.merge!({:count => count.length})
+	array.group_by(&:itself).map do |key_value, count|
+	key_value.merge!({:count => count.length})
 	end
 end
 
