@@ -6,21 +6,16 @@ def begins_with_r(array)
 end
 
 def contain_a(array)
-	contains_a_array = []
-	array.each do |x|
-		if x.include?("a")
-			contains_a_array << x 
-		end
-	end
-	return contains_a_array
+	array.select {|element| element.include?("a")}
 end
 
-def first_wa(hash)
-	hash.select do |x|
-		if x.to_s.start_with?("wa")
-			return x 
-		end
-	end
+def first_wa(array)
+	array.find {|element| element.to_s.start_with?("wa")}
+	# hash.select do |x|
+	# 	if x.to_s.start_with?("wa")
+	# 		return x 
+	# 	end
+	# end
 end
 
 def remove_non_strings(array)
